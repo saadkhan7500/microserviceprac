@@ -27,7 +27,7 @@ public class UserController {
 	{
 		User user= userServiceImpl.getUser(userId);
 		
-		List contacts = this.restTemplate.getForObject("http://localhost:9002/contact/"+user.getId(),List.class);
+		List contacts = this.restTemplate.getForObject("http://contact-service/contact/"+user.getId(),List.class);
 		
 		user.setContact(contacts);
 		
